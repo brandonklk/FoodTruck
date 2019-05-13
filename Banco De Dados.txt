@@ -1,0 +1,39 @@
+create table OrderItems(
+id bigint primary key,
+quantity decimal(3,2) not null,
+product_id bigint not null,
+order_id bigint not null,
+unit_price decimal(3,2) not null,
+foreign key(product_id) references Products(id),
+foreign key(order_id) references Orders(id)
+);
+
+create table Products(
+id bigint primary key,
+desciption varchar(500) not null,
+price decimal(3,2) not null
+);
+
+create table Orders(
+id bigint primary key,
+customer_id bigint not null,
+seller_id bigint not null,
+order_date datetime not null,
+prepared_date datetime,
+delivery_date datetime,
+foreign key(seller_id) references Users(id),
+foreign key(customer_id) references Customers(id)
+);
+
+create table Customers(
+id bigint primary key,
+name varchar(200) not null,
+email varchar(200) not null,
+address varchar(200) not null
+);
+
+create table Users(
+id bigint primary key,
+name varchar(200) not null,
+email varchar(200) not null
+);
