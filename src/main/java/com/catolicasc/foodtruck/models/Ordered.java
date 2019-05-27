@@ -9,7 +9,7 @@ package com.catolicasc.foodtruck.models;
  *
  * @author brandon.kluck
  */
-public class Requests {
+public class Ordered {
     
     private Integer id;
     private Double quantity;

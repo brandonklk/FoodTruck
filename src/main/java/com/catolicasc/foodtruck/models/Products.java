@@ -28,7 +28,7 @@ public class Products {
         this.price = price;
     }
     
-    public Integer getIs() {
+    public Integer getId() {
         return id;
     }
 

@@ -6,7 +6,7 @@
 package com.catolicasc.foodtruck.repositories;
 
 import com.catolicasc.foodtruck.ConnectionFactory;
-import com.catolicasc.foodtruck.models.Products;
+import com.catolicasc.foodtruck.models.Customers;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,35 +18,38 @@ import java.util.ArrayList;
  *
  * @author brandon.kluck
  */
-public class ProductsRepository {
+public class CustomersRepository {
     private Connection connection;
     
-    public ProductsRepository(){
+    public CustomersRepository(){
         connection = new ConnectionFactory().getConnection();
     }
     
-    public Products getProductsById(Integer productsId) {
+    public Customers getCustomersById(Integer customersId){
+        
         try{
-            String sql = "SELECT ID, DESCRIPTION, PRICE FROM PRODUCTS WHERE ID = ?";
+            String sql = "SELECT ID, NAME, EMAIL, ADDRESS FROM CUSTOMERS WHERE ID = ?";
             PreparedStatement selectStmt = connection.prepareStatement(sql);
-            selectStmt.setInt(1, productsId);
+            selectStmt.setInt(1, customersId);
             ResultSet resultSet = selectStmt.executeQuery();
             
-            Products products = null;
+            Customers customers = null;
             
             if(resultSet.first()) {
-                products = new Products();
+                customers = new Customers();
             
                 int id = resultSet.getInt("ID");
-                String description = resultSet.getString("DESCRIPTION");
-                Double price = resultSet.getDouble("PRICE");
+                String name = resultSet.getString("NAME");
+                String email = resultSet.getString("EMAIL");
+                String address = resultSet.getString("ADDRESS");
 
-                products.setId(id);
-                products.setDescription(description);
-                products.setPrice(price);
+                customers.setId(id);
+                customers.setName(name);
+                customers.setEmail(email);
+                customers.setAddress(address);
             }
             
-            return products;
+            return customers;
             
             
         }catch (SQLException ex) {
@@ -54,39 +57,42 @@ public class ProductsRepository {
         }
     }
     
-    public ArrayList<Products> getAllProducts() {
+    public ArrayList<Customers> getAllProducts() {
         try{
-            ArrayList<Products> product = new ArrayList<>();
+            ArrayList<Customers> customer = new ArrayList<>();
             
-            String sql = "SELECT ID, DESCRIPTION, PRICE FROM PRODUCTS";
+            String sql = "SELECT ID, NAME, EMAIL, ADDRESS FROM CUSTOMERS";
             Statement selectStmt = connection.createStatement();
             ResultSet resultSet = selectStmt.executeQuery(sql);
             while(resultSet.next()) {
                 
                 int id = resultSet.getInt("ID");
-                String description = resultSet.getString("DESCRIPTION");
-                Double price = resultSet.getDouble("PRICE");
+                String name = resultSet.getString("NAME");
+                String email = resultSet.getString("EMAIL");
+                String address = resultSet.getString("ADDRESS");
                 
-                Products products = new Products();
-                products.setId(id);
-                products.setDescription(description);
-                products.setPrice(price);
+                Customers customers = new Customers();
+                customers.setId(id);
+                customers.setName(name);
+                customers.setEmail(email);
+                customers.setAddress(address);
                 
-                product.add(products);
+                customer.add(customers);
             }
             
-            return product;
+            return customer;
         }catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
     }
     
-        public Products add(Products products) {
+     public Customers add(Customers customers) {
         try {
-            String sql = "INSERT INTO PRODUCTS (DESCRIPTION, PRICE) VALUES (?, ?)";
+            String sql = "INSERT INTO CUSTOMERS (NAME, EMAIL, ADDRESS) VALUES (?, ?)";
             PreparedStatement insertStmt = connection.prepareStatement(sql);
-            insertStmt.setString(1, products.getDescription());
-            insertStmt.setDouble(2, products.getPrice());
+            insertStmt.setString(1, customers.getName());
+            insertStmt.setString(2, customers.getEmail());
+            insertStmt.setString(3, customers.getAddress());
             insertStmt.executeUpdate();
             insertStmt.close();
             
@@ -96,13 +102,13 @@ public class ProductsRepository {
             ResultSet resultSet = selectStmt.executeQuery(sql);
             while(resultSet.next()) {
                 Integer id  = resultSet.getInt("ID");
-                products.setId(id);
+                customers.setId(id);
             }
             selectStmt.close();
             
-            return products;
+            return customers;
         }catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
-    }   
+    }      
 }
