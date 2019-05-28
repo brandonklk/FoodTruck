@@ -22,17 +22,17 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="tfDescription" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfPrice" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfID" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLaber2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLaber3" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLaber1" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextField3" max="32767" attributes="0"/>
+                  <Component id="tfDesciption" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextField2" min="-2" pref="96" max="-2" attributes="0"/>
-                          <Component id="jTextField1" min="-2" pref="62" max="-2" attributes="0"/>
+                          <Component id="tfPrice" min="-2" pref="96" max="-2" attributes="0"/>
+                          <Component id="tfID" min="-2" pref="62" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="224" max="32767" attributes="0"/>
                   </Group>
@@ -46,19 +46,19 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLaber1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="tfID" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLaber3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="tfPrice" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextField3" pref="185" max="32767" attributes="0"/>
+                  <Component id="tfDesciption" pref="185" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="tfDescription" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLaber2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -68,34 +68,34 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="tfID">
+    <Component class="javax.swing.JLabel" name="jLaber1">
       <Properties>
         <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="tfDescription">
+    <Component class="javax.swing.JLabel" name="jLaber2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="tfPrice">
+    <Component class="javax.swing.JLabel" name="jLaber3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Pre&#xe7;o:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="tfID">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfIDActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="tfPrice">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfPriceActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="tfDesciption">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfDesciptionActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

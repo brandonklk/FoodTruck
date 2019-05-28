@@ -26,7 +26,7 @@ public class AddEditProducts extends javax.swing.JInternalFrame {
     
     private void updateScreen(Products products) {
         tfID.setText(products.getId().toString());
-        tfDescription.setText(products.getDescription());
+        tfDesciption.setText(products.getDescription());
         tfPrice.setText(products.getPrice().toString());
     }
        
@@ -46,34 +46,34 @@ public class AddEditProducts extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tfID = new javax.swing.JLabel();
-        tfDescription = new javax.swing.JLabel();
-        tfPrice = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        jLaber1 = new javax.swing.JLabel();
+        jLaber2 = new javax.swing.JLabel();
+        jLaber3 = new javax.swing.JLabel();
+        tfID = new javax.swing.JTextField();
+        tfPrice = new javax.swing.JTextField();
+        tfDesciption = new javax.swing.JTextField();
 
-        tfID.setText("Código:");
+        jLaber1.setText("Código:");
 
-        tfDescription.setText("Descrição:");
+        jLaber2.setText("Descrição:");
 
-        tfPrice.setText("Preço:");
+        jLaber3.setText("Preço:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tfID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                tfIDActionPerformed(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        tfPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                tfPriceActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        tfDesciption.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                tfDesciptionActionPerformed(evt);
             }
         });
 
@@ -84,16 +84,16 @@ public class AddEditProducts extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfDescription)
-                    .addComponent(tfPrice)
-                    .addComponent(tfID))
+                    .addComponent(jLaber2)
+                    .addComponent(jLaber3)
+                    .addComponent(jLaber1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3)
+                    .addComponent(tfDesciption)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfID, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 224, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -102,33 +102,33 @@ public class AddEditProducts extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfID)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLaber1)
+                    .addComponent(tfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfPrice)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLaber3)
+                    .addComponent(tfPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                    .addComponent(tfDesciption, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(tfDescription)
+                        .addComponent(jLaber2)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void tfPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPriceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_tfPriceActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void tfDesciptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfDesciptionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_tfDesciptionActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tfIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tfIDActionPerformed
 
     private void btCancelActionPerformed(java.awt.event.ActionEvent evt) {                                         
         this.dispose();
@@ -136,7 +136,7 @@ public class AddEditProducts extends javax.swing.JInternalFrame {
 
     private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try {
-            String description = tfDescription.getText();
+            String description = tfDesciption.getText();
             Double price = tfPrice.getText();
             
             if (products == null) {
@@ -160,11 +160,11 @@ public class AddEditProducts extends javax.swing.JInternalFrame {
     }    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JLabel tfDescription;
-    private javax.swing.JLabel tfID;
-    private javax.swing.JLabel tfPrice;
+    private javax.swing.JLabel jLaber1;
+    private javax.swing.JLabel jLaber2;
+    private javax.swing.JLabel jLaber3;
+    private javax.swing.JTextField tfDesciption;
+    private javax.swing.JTextField tfID;
+    private javax.swing.JTextField tfPrice;
     // End of variables declaration//GEN-END:variables
 }

@@ -25,9 +25,9 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
     
     private void updateScreen(Customers customers) {
         tfID.setText(customers.getId().toString());
-        tfNome.setText(customers.getName());
-        tfEmail.setText(customers.getEmail());
-        tfAddress.setText(customers.getAddress());
+        tfName.setText(customers.getName());
+        tfAddress.setText(customers.getEmail());
+        tfEmail.setText(customers.getAddress());
     }
     
     /**
@@ -46,44 +46,44 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tfID = new javax.swing.JLabel();
-        tfNome = new javax.swing.JLabel();
-        tfEmail = new javax.swing.JLabel();
-        tfAddress = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jLaber1 = new javax.swing.JLabel();
+        jLaber2 = new javax.swing.JLabel();
+        jLaber3 = new javax.swing.JLabel();
+        jLaber4 = new javax.swing.JLabel();
+        tfID = new javax.swing.JTextField();
+        tfName = new javax.swing.JTextField();
+        tfEmail = new javax.swing.JTextField();
+        tfAddress = new javax.swing.JTextField();
 
-        tfID.setText("Código:");
+        jLaber1.setText("Código:");
 
-        tfNome.setText("Nome:");
+        jLaber2.setText("Nome:");
 
-        tfEmail.setText("E-mail:");
+        jLaber3.setText("E-mail:");
 
-        tfAddress.setText("Endereço:");
+        jLaber4.setText("Endereço:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tfID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                tfIDActionPerformed(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        tfName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                tfNameActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        tfEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                tfEmailActionPerformed(evt);
             }
         });
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        tfAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                tfAddressActionPerformed(evt);
             }
         });
 
@@ -96,21 +96,21 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfNome)
-                            .addComponent(tfEmail))
+                            .addComponent(jLaber2)
+                            .addComponent(jLaber3))
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
-                            .addComponent(jTextField2)))
+                            .addComponent(tfEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+                            .addComponent(tfName)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(tfID)
+                        .addComponent(jLaber1)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfID, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(tfAddress)
+                        .addComponent(jLaber4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField3)))
+                        .addComponent(tfAddress)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -118,39 +118,39 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfID)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLaber1)
+                    .addComponent(tfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfNome)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLaber2)
+                    .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfEmail)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLaber3)
+                    .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfAddress)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLaber4)
+                    .addComponent(tfAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(107, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tfIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tfIDActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void tfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_tfNameActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void tfAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAddressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_tfAddressActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void tfEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_tfEmailActionPerformed
 
     private void btCancelActionPerformed(java.awt.event.ActionEvent evt) {                                         
         this.dispose();
@@ -158,14 +158,15 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
 
     private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try {
-            String nome = tfNome.getText();
-            String email = tfEmail.getText();
-            String address = tfAddress.getText();
+            String nome = tfName.getText();
+            String email = tfAddress.getText();
+            String address = tfEmail.getText();
             
             if (customers == null) {
                 customers = new Customers();
                 customers.setName(nome);
                 customers.setEmail(email);
+                customers.setAddress(address);
                 customersRepository.add(customers);
             } else {
                 //Atualizar as propriedades do usuário
@@ -184,13 +185,13 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
     }         
       
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JLabel tfAddress;
-    private javax.swing.JLabel tfEmail;
-    private javax.swing.JLabel tfID;
-    private javax.swing.JLabel tfNome;
+    private javax.swing.JLabel jLaber1;
+    private javax.swing.JLabel jLaber2;
+    private javax.swing.JLabel jLaber3;
+    private javax.swing.JLabel jLaber4;
+    private javax.swing.JTextField tfAddress;
+    private javax.swing.JTextField tfEmail;
+    private javax.swing.JTextField tfID;
+    private javax.swing.JTextField tfName;
     // End of variables declaration//GEN-END:variables
 }

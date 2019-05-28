@@ -110,5 +110,39 @@ public class CustomersRepository {
         }catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
-    }      
+    } 
+
+    public Customers remove(Customers customers) {
+        try {
+            String sql = "DELETE FROM CUSTOMERS WHERE ID = ?";
+            PreparedStatement deleteStmt = connection.prepareStatement(sql);
+            
+            deleteStmt.setInt(1, customers.getId());
+            deleteStmt.setString(2, customers.getName());
+            deleteStmt.setString(3, customers.getEmail());
+            deleteStmt.setString(4, customers.getAddress());
+            
+            ResultSet resultSet = deleteStmt.executeQuery();
+            
+            while(resultSet.next()) {
+                customers = new Customers();
+            
+                int id = resultSet.getInt("ID");
+                String name = resultSet.getString("NAME");
+                String email = resultSet.getString("EMAIL");
+                String address = resultSet.getString("ADDRESS");
+
+                customers.setId(id);
+                customers.setName(name);
+                customers.setEmail(email);
+                customers.setAddress(address);
+            }           
+            deleteStmt.close();
+                       
+            return customers;
+            
+            }catch (SQLException ex) {
+            throw new RuntimeException(ex);
+         }
+    }
 }
