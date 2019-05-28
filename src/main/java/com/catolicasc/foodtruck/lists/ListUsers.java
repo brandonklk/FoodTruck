@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.catolicasc.foodtruck;
+package com.catolicasc.foodtruck.lists;
 
+import com.catolicasc.foodtruck.change.AddEditUser;
 import com.catolicasc.foodtruck.models.User;
 import com.catolicasc.foodtruck.repositories.UserRepository;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author guilherme
  */
+
 public class ListUsers extends javax.swing.JInternalFrame {
 
     

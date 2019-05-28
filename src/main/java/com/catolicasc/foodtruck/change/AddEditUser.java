@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.catolicasc.foodtruck;
+package com.catolicasc.foodtruck.change;
 
+import com.catolicasc.foodtruck.models.Ordered;
 import com.catolicasc.foodtruck.models.User;
 import com.catolicasc.foodtruck.repositories.UserRepository;
 import javax.swing.JOptionPane;
@@ -192,4 +193,8 @@ public class AddEditUser extends javax.swing.JInternalFrame {
     private javax.swing.JTextField tfID;
     private javax.swing.JTextField tfNome;
     // End of variables declaration//GEN-END:variables
+
+    void setUser(Ordered ordered) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

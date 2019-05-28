@@ -5,6 +5,7 @@
  */
 package com.catolicasc.foodtruck;
 
+import com.catolicasc.foodtruck.lists.ListUsers;
 import com.catolicasc.foodtruck.models.User;
 
 /**
