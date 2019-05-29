@@ -56,6 +56,10 @@ public class ListOrdered extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jtOrdered = new javax.swing.JTable();
+        jbDelete = new javax.swing.JButton();
+        jbUpdate = new javax.swing.JButton();
+        jbAdd = new javax.swing.JButton();
+        jbRefresh = new javax.swing.JButton();
 
         jtOrdered.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -83,26 +87,52 @@ public class ListOrdered extends javax.swing.JInternalFrame {
         jtOrdered.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jtOrdered);
 
+        jbDelete.setText("Apagar");
+
+        jbUpdate.setText("Alterar");
+
+        jbAdd.setText("Adicionar");
+
+        jbRefresh.setText("Atualizar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 614, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(305, Short.MAX_VALUE)
+                .addComponent(jbDelete)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbUpdate)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbAdd)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbRefresh)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
                     .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(367, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbRefresh)
+                    .addComponent(jbAdd)
+                    .addComponent(jbUpdate)
+                    .addComponent(jbDelete))
+                .addGap(21, 21, 21))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(56, Short.MAX_VALUE)))
+                    .addContainerGap(55, Short.MAX_VALUE)))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbAddActionPerformed(java.awt.event.ActionEvent evt) {                                      
@@ -132,13 +162,17 @@ public class ListOrdered extends javax.swing.JInternalFrame {
         Ordered ordered  = orderedRepository.getOrderedById(orderedId);
         
         AddEditOrdered addEditOrdered = new AddEditOrdered();
-        addEditOrdered.Ordered(ordered);
+        addEditOrdered.setOrdered(ordered);
         this.getParent().add(addEditOrdered);
         addEditOrdered.setVisible(true);
     } 
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jbAdd;
+    private javax.swing.JButton jbDelete;
+    private javax.swing.JButton jbRefresh;
+    private javax.swing.JButton jbUpdate;
     private javax.swing.JTable jtOrdered;
     // End of variables declaration//GEN-END:variables
 }

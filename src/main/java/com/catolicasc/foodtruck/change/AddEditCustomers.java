@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author breno
+ * @author brandon.kluck
  */
 public class AddEditCustomers extends javax.swing.JInternalFrame {
 
@@ -54,6 +54,8 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
         tfName = new javax.swing.JTextField();
         tfEmail = new javax.swing.JTextField();
         tfAddress = new javax.swing.JTextField();
+        btSave = new javax.swing.JButton();
+        btCancel = new javax.swing.JButton();
 
         jLaber1.setText("Código:");
 
@@ -87,6 +89,10 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
             }
         });
 
+        btSave.setText("Salvar");
+
+        btCancel.setText("Cancelar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,6 +118,12 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tfAddress)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btCancel)
+                .addGap(29, 29, 29)
+                .addComponent(btSave)
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,8 +144,14 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLaber4)
                     .addComponent(tfAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btSave)
+                    .addComponent(btCancel))
+                .addGap(19, 19, 19))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIDActionPerformed
@@ -185,6 +203,8 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
     }         
       
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btCancel;
+    private javax.swing.JButton btSave;
     private javax.swing.JLabel jLaber1;
     private javax.swing.JLabel jLaber2;
     private javax.swing.JLabel jLaber3;

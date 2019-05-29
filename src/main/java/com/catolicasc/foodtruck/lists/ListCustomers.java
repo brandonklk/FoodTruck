@@ -55,6 +55,10 @@ public class ListCustomers extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jtCustomers = new javax.swing.JTable();
+        jbRefresh = new javax.swing.JButton();
+        jbDelete = new javax.swing.JButton();
+        jbUpdate = new javax.swing.JButton();
+        jbAdd = new javax.swing.JButton();
 
         jtCustomers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -82,26 +86,52 @@ public class ListCustomers extends javax.swing.JInternalFrame {
         jtCustomers.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jtCustomers);
 
+        jbRefresh.setText("Atualizar");
+
+        jbDelete.setText("Apagar");
+
+        jbUpdate.setText("Alterar");
+
+        jbAdd.setText("Adicionar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 616, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(305, Short.MAX_VALUE)
+                .addComponent(jbDelete)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbUpdate)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbAdd)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbRefresh)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
                     .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 411, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(367, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbRefresh)
+                    .addComponent(jbAdd)
+                    .addComponent(jbUpdate)
+                    .addComponent(jbDelete))
+                .addGap(21, 21, 21))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(55, Short.MAX_VALUE)))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbAddActionPerformed(java.awt.event.ActionEvent evt) {                                      
@@ -138,6 +168,10 @@ public class ListCustomers extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jbAdd;
+    private javax.swing.JButton jbDelete;
+    private javax.swing.JButton jbRefresh;
+    private javax.swing.JButton jbUpdate;
     private javax.swing.JTable jtCustomers;
     // End of variables declaration//GEN-END:variables
 }

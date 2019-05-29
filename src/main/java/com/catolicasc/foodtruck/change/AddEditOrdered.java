@@ -11,13 +11,17 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author breno
+ * @author brandon.kluck
  */
 public class AddEditOrdered extends javax.swing.JInternalFrame {
 
     private OrderedRepository orderedRepository = new OrderedRepository();
     
     private Ordered ordered;
+
+    public void setOrdered(Ordered ordered) {
+        this.ordered = ordered;
+    }
     
     private void updateScreen(Ordered ordered) {
         tfID.setText(ordered.getId().toString());
@@ -53,6 +57,8 @@ public class AddEditOrdered extends javax.swing.JInternalFrame {
         tfOrder_id = new javax.swing.JTextField();
         tfQuantity = new javax.swing.JTextField();
         tfUnit_price = new javax.swing.JTextField();
+        btSave = new javax.swing.JButton();
+        btCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -71,6 +77,10 @@ public class AddEditOrdered extends javax.swing.JInternalFrame {
                 tfIDActionPerformed(evt);
             }
         });
+
+        btSave.setText("Salvar");
+
+        btCancel.setText("Cancelar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,6 +114,12 @@ public class AddEditOrdered extends javax.swing.JInternalFrame {
                                         .addComponent(tfQuantity))))
                             .addGap(2, 2, 2))))
                 .addGap(192, 192, 192))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btCancel)
+                .addGap(32, 32, 32)
+                .addComponent(btSave)
+                .addGap(21, 21, 21))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +132,7 @@ public class AddEditOrdered extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(tfProduct_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(tfOrder_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -128,7 +144,11 @@ public class AddEditOrdered extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(tfUnit_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btSave)
+                    .addComponent(btCancel))
+                .addGap(14, 14, 14))
         );
 
         pack();
@@ -144,10 +164,16 @@ public class AddEditOrdered extends javax.swing.JInternalFrame {
 
     private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try {
-            Double quantity = tfProduct_id.getText();
-            Long product_id = tfOrder_id.getText();
-            Long order_id = tfProduct_id.getText();
-            Double unit_price = tfUnit_price.getText();
+            
+            String quantitys = tfProduct_id.getText();
+            String products_id = tfOrder_id.getText();
+            String orders_id = tfProduct_id.getText();
+            String unit_prices = tfUnit_price.getText();
+            
+            Double quantity = Double.parseDouble(quantitys);
+            Long product_id = Long.parseLong(products_id);
+            Long order_id = Long.parseLong(orders_id);
+            Double unit_price = Double.parseDouble(unit_prices);
             
             if (ordered == null) {
                 ordered = new Ordered();
@@ -171,21 +197,10 @@ public class AddEditOrdered extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "Ocorreu um problema ao salvar");
         }
     }                                      
-
-    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {                                         
-        if (ordered != null) {
-            updateScreen(ordered);
-        }
-    }
-
-    void setOrdered(Ordered ordered) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void Ordered(Ordered ordered) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btCancel;
+    private javax.swing.JButton btSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
