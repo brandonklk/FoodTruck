@@ -6,10 +6,7 @@
 package com.catolicasc.foodtruck.lists;
 
 import com.catolicasc.foodtruck.change.AddEditCustomers;
-import com.catolicasc.foodtruck.change.AddEditOrdered;
-import com.catolicasc.foodtruck.change.AddEditProducts;
 import com.catolicasc.foodtruck.models.Customers;
-import com.catolicasc.foodtruck.models.Ordered;
 import com.catolicasc.foodtruck.repositories.CustomersRepository;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -181,9 +178,9 @@ public class ListCustomers extends javax.swing.JInternalFrame {
 
     private void jbAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAddActionPerformed
         // Aplicação para adicionar novos registros no banco
-        AddEditProducts addEditProducts = new AddEditProducts();
-        this.getParent().add(addEditProducts);
-        addEditProducts.setVisible(true);
+        AddEditCustomers addEditCustomers = new AddEditCustomers();
+        this.getParent().add(addEditCustomers);
+        addEditCustomers.setVisible(true);
     }//GEN-LAST:event_jbAddActionPerformed
 
     private void jbUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbUpdateActionPerformed

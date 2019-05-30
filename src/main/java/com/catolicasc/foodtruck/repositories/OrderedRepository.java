@@ -7,14 +7,12 @@ package com.catolicasc.foodtruck.repositories;
 
 import java.sql.Connection;
 import com.catolicasc.foodtruck.ConnectionFactory;
-import com.catolicasc.foodtruck.models.Customers;
 import com.catolicasc.foodtruck.models.Ordered;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
 
 /**
  *
@@ -60,7 +58,7 @@ public class OrderedRepository {
         }
     }
     
-    public ArrayList<Ordered> getAllProducts() {
+    public ArrayList<Ordered> getAllOrdered() {
         try{
             ArrayList<Ordered> ordereds = new ArrayList<>();
             
@@ -93,7 +91,7 @@ public class OrderedRepository {
     
     public Ordered add(Ordered ordered) {
         try {
-            String sql = "INSERT INTO PRODUCTS (QUANTITY, PRODUCT_ID, ORDER_ID, UNIT_PRICE) VALUES (?, ?)";
+            String sql = "INSERT INTO ORDERED (QUANTITY, PRODUCT_ID, ORDER_ID, UNIT_PRICE) VALUES (?, ?)";
             PreparedStatement insertStmt = connection.prepareStatement(sql);
             insertStmt.setDouble(1, ordered.getQuantity());
             insertStmt.setLong(2, ordered.getProduct_id());
@@ -120,13 +118,14 @@ public class OrderedRepository {
     
     public Ordered remove(Ordered ordereds) {
         try {
-            String sql = "DELETE FROM CUSTOMERS WHERE ID = ?";
+            String sql = "DELETE FROM ORDERED WHERE ID = ?";
             PreparedStatement deleteStmt = connection.prepareStatement(sql);
             
             deleteStmt.setInt(1, ordereds.getId());
-            deleteStmt.setString(2, ordereds.getName());
-            deleteStmt.setString(3, ordereds.getEmail());
-            deleteStmt.setString(4, ordereds.getAddress());
+            deleteStmt.setDouble(2, ordereds.getQuantity());
+            deleteStmt.setLong(3, ordereds.getProduct_id());
+            deleteStmt.setLong(4, ordereds.getOrder_id());
+            deleteStmt.setDouble(5, ordereds.getUnit_price());
             
             ResultSet resultSet = deleteStmt.executeQuery();
             
@@ -134,14 +133,16 @@ public class OrderedRepository {
                 ordereds = new Ordered();
             
                 int id = resultSet.getInt("ID");
-                String name = resultSet.getString("NAME");
-                String email = resultSet.getString("EMAIL");
-                String address = resultSet.getString("ADDRESS");
+                Double quantity = resultSet.getDouble("QUANTITY");
+                Long product_id = resultSet.getLong("PRODUCT_ID");
+                Long order_id = resultSet.getLong("ORDER_ID");
+                Double unit_price = resultSet.getDouble("UNIT_PRICE");
 
                 ordereds.setId(id);
-                ordereds.setName(name);
-                ordereds.setEmail(email);
-                ordereds.setAddress(address);
+                ordereds.setQuantity(quantity);
+                ordereds.setProduct_id(product_id);
+                ordereds.setOrder_id(order_id);
+                ordereds.setUnit_price(unit_price);
             }           
             deleteStmt.close();
                        
@@ -150,4 +151,6 @@ public class OrderedRepository {
             }catch (SQLException ex) {
             throw new RuntimeException(ex);
          }
+    }
+    
 }

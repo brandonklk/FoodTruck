@@ -39,5 +39,5 @@ public class Products {
     public Double getPrice() {
         return price;
     }
-   
+
 }

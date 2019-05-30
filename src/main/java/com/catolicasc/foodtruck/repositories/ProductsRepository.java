@@ -81,7 +81,7 @@ public class ProductsRepository {
         }
     }
     
-        public Products add(Products products) {
+    public Products add(Products products) {
         try {
             String sql = "INSERT INTO PRODUCTS (DESCRIPTION, PRICE) VALUES (?, ?)";
             PreparedStatement insertStmt = connection.prepareStatement(sql);
@@ -104,5 +104,36 @@ public class ProductsRepository {
         }catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
-    }   
+    }
+        
+    public Products remove(Products products) {
+        try {
+            String sql = "DELETE FROM PRODUCTS WHERE ID = ?";
+            PreparedStatement deleteStmt = connection.prepareStatement(sql);
+            
+            deleteStmt.setInt(1, products.getId());
+            deleteStmt.setString(2, products.getDescription());
+            deleteStmt.setDouble(3, products.getPrice());
+            
+            ResultSet resultSet = deleteStmt.executeQuery();
+            
+            while(resultSet.next()) {
+                products = new Products();
+            
+                int id = resultSet.getInt("ID");
+                String description = resultSet.getString("DESCIPTION");
+                Double price = resultSet.getDouble("PRICE");
+
+                products.setId(id);
+                products.setDescription(description);
+                products.setPrice(price);
+            }           
+            deleteStmt.close();
+                       
+            return products;
+            
+            }catch (SQLException ex) {
+            throw new RuntimeException(ex);
+         }
+    }    
 }
