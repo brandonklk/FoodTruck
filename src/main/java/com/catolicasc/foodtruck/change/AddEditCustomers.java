@@ -90,8 +90,18 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
         });
 
         btSave.setText("Salvar");
+        btSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSaveActionPerformed(evt);
+            }
+        });
 
         btCancel.setText("Cancelar");
+        btCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,12 +180,9 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfEmailActionPerformed
 
-    private void btCancelActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        this.dispose();
-    }                                        
-
-    private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        try {
+    private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
+        // TODO add your handling code here:
+         try {
             String nome = tfName.getText();
             String email = tfAddress.getText();
             String address = tfEmail.getText();
@@ -200,8 +207,13 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
         }catch(Exception ex) {
             JOptionPane.showMessageDialog(null, "Ocorreu um problema ao salvar");
         }
-    }         
-      
+    }//GEN-LAST:event_btSaveActionPerformed
+
+    private void btCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btCancelActionPerformed
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCancel;
     private javax.swing.JButton btSave;

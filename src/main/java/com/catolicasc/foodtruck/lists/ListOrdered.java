@@ -61,6 +61,24 @@ public class ListOrdered extends javax.swing.JInternalFrame {
         jbAdd = new javax.swing.JButton();
         jbRefresh = new javax.swing.JButton();
 
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
+        });
+
         jtOrdered.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -88,12 +106,32 @@ public class ListOrdered extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jtOrdered);
 
         jbDelete.setText("Apagar");
+        jbDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbDeleteActionPerformed(evt);
+            }
+        });
 
         jbUpdate.setText("Alterar");
+        jbUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbUpdateActionPerformed(evt);
+            }
+        });
 
         jbAdd.setText("Adicionar");
+        jbAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAddActionPerformed(evt);
+            }
+        });
 
         jbRefresh.setText("Atualizar");
+        jbRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbRefreshActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,22 +173,20 @@ public class ListOrdered extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbAddActionPerformed(java.awt.event.ActionEvent evt) {                                      
+    private void jbRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRefreshActionPerformed
+        // TODO add your handling code here:
+        refreshOrderedList();
+    }//GEN-LAST:event_jbRefreshActionPerformed
+
+    private void jbAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAddActionPerformed
+        // TODO add your handling code here:
         AddEditOrdered addEditOrdered = new AddEditOrdered();
         this.getParent().add(addEditOrdered);
         addEditOrdered.setVisible(true);
-    }                                     
+    }//GEN-LAST:event_jbAddActionPerformed
 
-    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
-        refreshOrderedList();
-    }                                        
-
-    private void jbRefreshActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        refreshOrderedList();
-    }                                         
-
-    private void jbUpdateActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        
+    private void jbUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbUpdateActionPerformed
+        // TODO add your handling code here:
         if(jtOrdered.getSelectedRowCount() == 0) {
             JOptionPane.showMessageDialog(null, "Selecione um pedido");
             return;
@@ -165,8 +201,17 @@ public class ListOrdered extends javax.swing.JInternalFrame {
         addEditOrdered.setOrdered(ordered);
         this.getParent().add(addEditOrdered);
         addEditOrdered.setVisible(true);
-    } 
- 
+    }//GEN-LAST:event_jbUpdateActionPerformed
+
+    private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbDeleteActionPerformed
+
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        // TODO add your handling code here:
+        refreshOrderedList();
+    }//GEN-LAST:event_formInternalFrameOpened
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbAdd;

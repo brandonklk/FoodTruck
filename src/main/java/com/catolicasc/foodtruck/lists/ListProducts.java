@@ -59,6 +59,24 @@ public class ListProducts extends javax.swing.JInternalFrame {
         jbAdd = new javax.swing.JButton();
         jbUpdate = new javax.swing.JButton();
 
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
+        });
+
         jtProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -86,6 +104,11 @@ public class ListProducts extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jtProducts);
 
         jbRefresh.setText("Atualizar");
+        jbRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbRefreshActionPerformed(evt);
+            }
+        });
 
         jbDelete.setText("Apagar");
         jbDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -95,8 +118,18 @@ public class ListProducts extends javax.swing.JInternalFrame {
         });
 
         jbAdd.setText("Adicionar");
+        jbAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAddActionPerformed(evt);
+            }
+        });
 
         jbUpdate.setText("Alterar");
+        jbUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbUpdateActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -142,22 +175,20 @@ public class ListProducts extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jbDeleteActionPerformed
 
-    private void jbAddActionPerformed(java.awt.event.ActionEvent evt) {                                      
-        AddEditProducts addEditProducts = new AddEditProducts();
+    private void jbRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRefreshActionPerformed
+        // TODO add your handling code here:
+        refreshProductsList();
+    }//GEN-LAST:event_jbRefreshActionPerformed
+
+    private void jbAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAddActionPerformed
+        // TODO add your handling code here:
+         AddEditProducts addEditProducts = new AddEditProducts();
         this.getParent().add(addEditProducts);
         addEditProducts.setVisible(true);
-    }                                     
-    
-    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
-        refreshProductsList();
-    }                                        
+    }//GEN-LAST:event_jbAddActionPerformed
 
-    private void jbRefreshActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        refreshProductsList();
-    }                                         
-
-    private void jbUpdateActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        
+    private void jbUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbUpdateActionPerformed
+        // TODO add your handling code here:
         if(jtProducts.getSelectedRowCount() == 0) {
             JOptionPane.showMessageDialog(null, "Selecione um produto");
             return;
@@ -172,8 +203,13 @@ public class ListProducts extends javax.swing.JInternalFrame {
         addEditProducts.setProducts(products);
         this.getParent().add(addEditProducts);
         addEditProducts.setVisible(true);
-    }      
-    
+    }//GEN-LAST:event_jbUpdateActionPerformed
+
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        // TODO add your handling code here:
+        refreshProductsList();
+    }//GEN-LAST:event_formInternalFrameOpened
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbAdd;

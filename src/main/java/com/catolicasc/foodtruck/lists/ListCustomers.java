@@ -6,8 +6,10 @@
 package com.catolicasc.foodtruck.lists;
 
 import com.catolicasc.foodtruck.change.AddEditCustomers;
+import com.catolicasc.foodtruck.change.AddEditOrdered;
 import com.catolicasc.foodtruck.change.AddEditProducts;
 import com.catolicasc.foodtruck.models.Customers;
+import com.catolicasc.foodtruck.models.Ordered;
 import com.catolicasc.foodtruck.repositories.CustomersRepository;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -60,6 +62,24 @@ public class ListCustomers extends javax.swing.JInternalFrame {
         jbUpdate = new javax.swing.JButton();
         jbAdd = new javax.swing.JButton();
 
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
+        });
+
         jtCustomers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -87,12 +107,32 @@ public class ListCustomers extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jtCustomers);
 
         jbRefresh.setText("Atualizar");
+        jbRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbRefreshActionPerformed(evt);
+            }
+        });
 
         jbDelete.setText("Apagar");
+        jbDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbDeleteActionPerformed(evt);
+            }
+        });
 
         jbUpdate.setText("Alterar");
+        jbUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbUpdateActionPerformed(evt);
+            }
+        });
 
         jbAdd.setText("Adicionar");
+        jbAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAddActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,37 +174,45 @@ public class ListCustomers extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbAddActionPerformed(java.awt.event.ActionEvent evt) {                                      
+    private void jbRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRefreshActionPerformed
+        // Aplicação para atualizar os registros
+        refreshCustomersList();
+    }//GEN-LAST:event_jbRefreshActionPerformed
+
+    private void jbAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAddActionPerformed
+        // Aplicação para adicionar novos registros no banco
         AddEditProducts addEditProducts = new AddEditProducts();
         this.getParent().add(addEditProducts);
         addEditProducts.setVisible(true);
-    }                                     
+    }//GEN-LAST:event_jbAddActionPerformed
 
-    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
-        refreshCustomersList();
-    }                                        
-
-    private void jbRefreshActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        refreshCustomersList();
-    }                                         
-
-    private void jbUpdateActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        
+    private void jbUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbUpdateActionPerformed
+        // Aplicação para atualizar os alterar
         if(jtCustomers.getSelectedRowCount() == 0) {
-            JOptionPane.showMessageDialog(null, "Selecione um cliente");
+            JOptionPane.showMessageDialog(null, "Selecione um pedido");
             return;
         }
         
         Integer rowIndex = jtCustomers.getSelectedRow();
         Integer customersId = (Integer) jtCustomers.getModel().getValueAt(rowIndex, 0);
         
-        Customers customers = customersRepository.getCustomersById(customersId);
+        Customers customers  = customersRepository.getCustomersById(customersId);
         
         AddEditCustomers addEditCustomers = new AddEditCustomers();
         addEditCustomers.setCustomers(customers);
         this.getParent().add(addEditCustomers);
         addEditCustomers.setVisible(true);
-    }      
+        
+    }//GEN-LAST:event_jbUpdateActionPerformed
+
+    private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
+        // Aplicação para atualizar os deletar
+    }//GEN-LAST:event_jbDeleteActionPerformed
+
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        // Aplicação para atualizar a tela a partir do metodo refreshCustomersList
+        refreshCustomersList();
+    }//GEN-LAST:event_formInternalFrameOpened
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;

@@ -79,8 +79,18 @@ public class AddEditOrdered extends javax.swing.JInternalFrame {
         });
 
         btSave.setText("Salvar");
+        btSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSaveActionPerformed(evt);
+            }
+        });
 
         btCancel.setText("Cancelar");
+        btCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -158,11 +168,8 @@ public class AddEditOrdered extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfIDActionPerformed
 
-    private void btCancelActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        this.dispose();
-    }                                        
-
-    private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {                                       
+    private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
+        // TODO add your handling code here:
         try {
             
             String quantitys = tfProduct_id.getText();
@@ -196,7 +203,12 @@ public class AddEditOrdered extends javax.swing.JInternalFrame {
         }catch(Exception ex) {
             JOptionPane.showMessageDialog(null, "Ocorreu um problema ao salvar");
         }
-    }                                      
+    }//GEN-LAST:event_btSaveActionPerformed
+
+    private void btCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btCancelActionPerformed
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCancel;

@@ -7,6 +7,7 @@ package com.catolicasc.foodtruck.repositories;
 
 import java.sql.Connection;
 import com.catolicasc.foodtruck.ConnectionFactory;
+import com.catolicasc.foodtruck.models.Customers;
 import com.catolicasc.foodtruck.models.Ordered;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -115,9 +116,38 @@ public class OrderedRepository {
         }catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
-    }   
-
-    public ArrayList<Ordered> getAllOrdered() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    public Ordered remove(Ordered ordereds) {
+        try {
+            String sql = "DELETE FROM CUSTOMERS WHERE ID = ?";
+            PreparedStatement deleteStmt = connection.prepareStatement(sql);
+            
+            deleteStmt.setInt(1, ordereds.getId());
+            deleteStmt.setString(2, ordereds.getName());
+            deleteStmt.setString(3, ordereds.getEmail());
+            deleteStmt.setString(4, ordereds.getAddress());
+            
+            ResultSet resultSet = deleteStmt.executeQuery();
+            
+            while(resultSet.next()) {
+                ordereds = new Ordered();
+            
+                int id = resultSet.getInt("ID");
+                String name = resultSet.getString("NAME");
+                String email = resultSet.getString("EMAIL");
+                String address = resultSet.getString("ADDRESS");
+
+                ordereds.setId(id);
+                ordereds.setName(name);
+                ordereds.setEmail(email);
+                ordereds.setAddress(address);
+            }           
+            deleteStmt.close();
+                       
+            return ordereds;
+            
+            }catch (SQLException ex) {
+            throw new RuntimeException(ex);
+         }
 }

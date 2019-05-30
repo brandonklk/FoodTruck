@@ -101,7 +101,40 @@ public class UserRepository {
             return user;
         }catch (SQLException ex) {
             throw new RuntimeException(ex);
-        }
-    }
-    
+        }        
+    } 
+    public User remove(User user){       
+        try {
+            String sql = "DELETE FROM USER WHERE ID = ?";
+            PreparedStatement deleteStmt = connection.prepareStatement(sql);
+            
+            deleteStmt.setInt(1, user.getId());
+            deleteStmt.setString(2, user.getName());
+            deleteStmt.setString(3, user.getEmail());
+            deleteStmt.setString(4, user.getAddress());
+            
+            ResultSet resultSet = deleteStmt.executeQuery();
+            
+            while(resultSet.next()) {
+                
+            }
+                user = new User();
+            
+                int id = resultSet.getInt("ID");
+                String name = resultSet.getString("NAME");
+                String email = resultSet.getString("EMAIL");
+                String address = resultSet.getString("ADDRESS");
+
+                user.setId(id);
+                user.setName(name);
+                user.setEmail(email);
+                user.setAddress(address);
+            }           
+            deleteStmt.close();
+                       
+            return user;
+            
+            }catch (SQLException ex) {
+            throw new RuntimeException(ex);
+         }
 }
