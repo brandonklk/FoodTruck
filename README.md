@@ -1,4 +1,4 @@
-Food Truck
+Food Truck.
 
 [![Build Status](https://travis-ci.org/brandonklk/FoodTruck.svg?branch=master)](https://travis-ci.com/brandonklk/FoodTruck)
 
