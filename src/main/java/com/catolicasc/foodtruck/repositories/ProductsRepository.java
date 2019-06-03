@@ -6,7 +6,6 @@
 package com.catolicasc.foodtruck.repositories;
 
 import com.catolicasc.foodtruck.ConnectionFactory;
-import com.catolicasc.foodtruck.models.Customers;
 import com.catolicasc.foodtruck.models.Products;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

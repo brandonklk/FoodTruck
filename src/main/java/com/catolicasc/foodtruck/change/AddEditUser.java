@@ -162,6 +162,7 @@ public class AddEditUser extends javax.swing.JInternalFrame {
                 userRepository.add(user);
             } else {
                 //Atualizar as propriedades do usuário
+                JOptionPane.showMessageDialog(null, "Ocorreu um erro ao criar um novo usuário");
                 //e fazer update do usuário no banco
             }
             

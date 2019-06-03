@@ -61,6 +61,23 @@ public class AddEditOrdered extends javax.swing.JInternalFrame {
         btCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
+        });
 
         jLabel1.setText("Código:");
 
@@ -181,6 +198,7 @@ public class AddEditOrdered extends javax.swing.JInternalFrame {
                 orderedRepository.add(ordered);
             } else {
                 //Atualizar as propriedades do usuário
+                JOptionPane.showMessageDialog(null, "Ocorreu um erro ao criar um novo pedido");
                 //e fazer update do usuário no banco
             }
             
@@ -199,6 +217,13 @@ public class AddEditOrdered extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btCancelActionPerformed
+
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        // TODO add your handling code here:
+        if (ordered != null) {
+            updateScreen(ordered);
+        }
+    }//GEN-LAST:event_formInternalFrameOpened
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCancel;

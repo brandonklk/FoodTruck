@@ -8,6 +8,7 @@ package com.catolicasc.foodtruck.change;
 import com.catolicasc.foodtruck.models.Customers;
 import com.catolicasc.foodtruck.repositories.CustomersRepository;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 
 /**
  *
@@ -56,6 +57,24 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
         tfAddress = new javax.swing.JTextField();
         btSave = new javax.swing.JButton();
         btCancel = new javax.swing.JButton();
+
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
+        });
 
         jLaber1.setText("Código:");
 
@@ -155,6 +174,7 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
                 customersRepository.add(customers);
             } else {
                 //Atualizar as propriedades do usuário
+                JOptionPane.showMessageDialog(null, "Ocorreu um erro ao criar um novo cliente");
                 //e fazer update do usuário no banco
             }
             
@@ -173,6 +193,13 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btCancelActionPerformed
+
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        // TODO add your handling code here:
+        if (customers != null) {
+            updateScreen(customers);
+        }
+    }//GEN-LAST:event_formInternalFrameOpened
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCancel;
@@ -186,4 +213,5 @@ public class AddEditCustomers extends javax.swing.JInternalFrame {
     private javax.swing.JTextField tfID;
     private javax.swing.JTextField tfName;
     // End of variables declaration//GEN-END:variables
+
 }

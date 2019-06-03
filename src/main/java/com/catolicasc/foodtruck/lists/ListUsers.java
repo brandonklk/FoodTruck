@@ -5,7 +5,6 @@
  */
 package com.catolicasc.foodtruck.lists;
 
-import com.catolicasc.foodtruck.change.AddEditProducts;
 import com.catolicasc.foodtruck.change.AddEditUser;
 import com.catolicasc.foodtruck.models.User;
 import com.catolicasc.foodtruck.repositories.UserRepository;
@@ -205,10 +204,13 @@ public class ListUsers extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbUpdateActionPerformed
 
     private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
-        // TODO add your handling code here:
-        AddEditUser addEditUser  = new AddEditUser();
-        this.getParent().add(addEditUser);
-        addEditUser.setVisible(true);
+        // Aplicação para deletar
+        if(jtUsers.getSelectedRowCount() != -1) {
+            DefaultTableModel ltUsers = (DefaultTableModel) jtUsers.getModel();
+            ltUsers.removeRow(jtUsers.getSelectedRow());
+        }else{
+            JOptionPane.showMessageDialog(null, "Selecione um pedido");           
+        }
     }//GEN-LAST:event_jbDeleteActionPerformed
 
 

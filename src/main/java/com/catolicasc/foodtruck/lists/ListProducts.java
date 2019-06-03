@@ -5,7 +5,6 @@
  */
 package com.catolicasc.foodtruck.lists;
 
-import com.catolicasc.foodtruck.change.AddEditOrdered;
 import com.catolicasc.foodtruck.change.AddEditProducts;
 import com.catolicasc.foodtruck.models.Products;
 import com.catolicasc.foodtruck.repositories.ProductsRepository;
@@ -173,10 +172,13 @@ public class ListProducts extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
-        // TODO add your handling code here:
-        AddEditProducts addEditProducts  = new AddEditProducts();
-        this.getParent().add(addEditProducts);
-        addEditProducts.setVisible(true);
+        // Aplicação para deletar
+        if(jtProducts.getSelectedRowCount() != -1) {
+            DefaultTableModel ltProducts = (DefaultTableModel) jtProducts.getModel();
+            ltProducts.removeRow(jtProducts.getSelectedRow());
+        }else{
+            JOptionPane.showMessageDialog(null, "Selecione um pedido");           
+        }
     }//GEN-LAST:event_jbDeleteActionPerformed
 
     private void jbRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRefreshActionPerformed

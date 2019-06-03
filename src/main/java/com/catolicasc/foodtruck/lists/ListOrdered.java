@@ -205,10 +205,13 @@ public class ListOrdered extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbUpdateActionPerformed
 
     private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
-        // TODO add your handling code here:
-        AddEditOrdered addEditOrdered  = new AddEditOrdered();
-        this.getParent().add(addEditOrdered);
-        addEditOrdered.setVisible(true);
+        // Aplicação para deletar
+        if(jtOrdered.getSelectedRowCount() != -1) {
+            DefaultTableModel ltOrdered = (DefaultTableModel) jtOrdered.getModel();
+            ltOrdered.removeRow(jtOrdered.getSelectedRow());
+        }else{
+            JOptionPane.showMessageDialog(null, "Selecione um pedido");           
+        }
     }//GEN-LAST:event_jbDeleteActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened

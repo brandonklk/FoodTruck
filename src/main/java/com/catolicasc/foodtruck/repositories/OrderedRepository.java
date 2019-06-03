@@ -7,7 +7,6 @@ package com.catolicasc.foodtruck.repositories;
 
 import java.sql.Connection;
 import com.catolicasc.foodtruck.ConnectionFactory;
-import com.catolicasc.foodtruck.models.Customers;
 import com.catolicasc.foodtruck.models.Ordered;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

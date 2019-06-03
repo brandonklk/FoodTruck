@@ -203,10 +203,13 @@ public class ListCustomers extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbUpdateActionPerformed
 
     private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
-        // Aplicação para atualizar os deletar
-        AddEditCustomers addEditCustomers = new AddEditCustomers();
-        this.getParent().add(addEditCustomers);
-        addEditCustomers.setVisible(true);
+        // Aplicação para deletar       
+        if(jtCustomers.getSelectedRowCount() != -1) {
+            DefaultTableModel ltCustomers = (DefaultTableModel) jtCustomers.getModel();
+            ltCustomers.removeRow(jtCustomers.getSelectedRow());
+        }else{
+            JOptionPane.showMessageDialog(null, "Selecione um pedido");           
+        }
     }//GEN-LAST:event_jbDeleteActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened

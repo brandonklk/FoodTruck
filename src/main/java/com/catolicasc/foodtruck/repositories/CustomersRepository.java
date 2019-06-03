@@ -64,6 +64,7 @@ public class CustomersRepository {
             String sql = "SELECT ID, NAME, EMAIL, ADDRESS FROM CUSTOMERS";
             Statement selectStmt = connection.createStatement();
             ResultSet resultSet = selectStmt.executeQuery(sql);
+            
             while(resultSet.next()) {
                 
                 int id = resultSet.getInt("ID");
@@ -154,6 +155,7 @@ public class CustomersRepository {
             updateStmt.setString(2, customers.getEmail());
             updateStmt.setString(3, customers.getAddress());
             updateStmt.setInt(4, customers.getId());
+            
             updateStmt.executeUpdate();
             updateStmt.close();
         

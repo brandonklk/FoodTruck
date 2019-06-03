@@ -18,8 +18,8 @@ public class ConnectionFactory {
     public Connection getConnection() {
         try {
             String host = "jdbc:mysql://localhost/foodtruck?useTimezone=true&serverTimezone=UTC";
-            String user = "user";
-            String password = "user";
+            String user = "root";
+            String password = "";
             Connection connection = DriverManager.getConnection(host, user, password);
             return connection;
         } catch (SQLException ex) {
