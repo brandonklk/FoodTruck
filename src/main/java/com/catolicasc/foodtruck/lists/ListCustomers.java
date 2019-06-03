@@ -204,6 +204,9 @@ public class ListCustomers extends javax.swing.JInternalFrame {
 
     private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
         // Aplicação para atualizar os deletar
+        AddEditCustomers addEditCustomers = new AddEditCustomers();
+        this.getParent().add(addEditCustomers);
+        addEditCustomers.setVisible(true);
     }//GEN-LAST:event_jbDeleteActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened

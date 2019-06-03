@@ -5,6 +5,7 @@
  */
 package com.catolicasc.foodtruck.lists;
 
+import com.catolicasc.foodtruck.change.AddEditProducts;
 import com.catolicasc.foodtruck.change.AddEditUser;
 import com.catolicasc.foodtruck.models.User;
 import com.catolicasc.foodtruck.repositories.UserRepository;
@@ -129,6 +130,11 @@ public class ListUsers extends javax.swing.JInternalFrame {
         });
 
         jbDelete.setText("Apagar");
+        jbDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -197,6 +203,13 @@ public class ListUsers extends javax.swing.JInternalFrame {
         this.getParent().add(addEditUser);
         addEditUser.setVisible(true);
     }//GEN-LAST:event_jbUpdateActionPerformed
+
+    private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
+        // TODO add your handling code here:
+        AddEditUser addEditUser  = new AddEditUser();
+        this.getParent().add(addEditUser);
+        addEditUser.setVisible(true);
+    }//GEN-LAST:event_jbDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

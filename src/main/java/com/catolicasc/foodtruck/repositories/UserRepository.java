@@ -6,6 +6,7 @@
 package com.catolicasc.foodtruck.repositories;
 
 import com.catolicasc.foodtruck.ConnectionFactory;
+import com.catolicasc.foodtruck.models.Customers;
 import com.catolicasc.foodtruck.models.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -135,5 +136,22 @@ public class UserRepository {
             }catch (SQLException ex) {
             throw new RuntimeException(ex);
          }
-    }    
+    }
+    
+    public User update(User user) {
+        try {
+            String sql = "UPDATE USER SET = ? ,NAME, ? ,EMAIL WHERE ID = ?";
+            PreparedStatement updateStmt = connection.prepareStatement(sql);
+            updateStmt.setString(1, user.getName());
+            updateStmt.setString(2, user.getEmail());
+            updateStmt.setInt(4, user.getId());
+            
+            updateStmt.executeUpdate();
+            updateStmt.close();
+        
+            return user;
+        }catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
 }

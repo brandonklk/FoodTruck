@@ -5,6 +5,7 @@
  */
 package com.catolicasc.foodtruck.lists;
 
+import com.catolicasc.foodtruck.change.AddEditCustomers;
 import com.catolicasc.foodtruck.change.AddEditOrdered;
 import com.catolicasc.foodtruck.models.Ordered;
 import com.catolicasc.foodtruck.repositories.OrderedRepository;
@@ -205,6 +206,9 @@ public class ListOrdered extends javax.swing.JInternalFrame {
 
     private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
         // TODO add your handling code here:
+        AddEditOrdered addEditOrdered  = new AddEditOrdered();
+        this.getParent().add(addEditOrdered);
+        addEditOrdered.setVisible(true);
     }//GEN-LAST:event_jbDeleteActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened

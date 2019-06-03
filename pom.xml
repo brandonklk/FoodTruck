@@ -27,16 +27,18 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.15</version>
         </dependency>
+       
         
-        <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc
+        <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc 
+
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
             <version>7.3.0.jre11-preview</version>
-            <scope>test compile</scope>
+            <type>jar</type>
         </dependency>
         -->
-              
+        
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>

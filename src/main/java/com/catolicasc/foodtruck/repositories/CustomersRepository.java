@@ -145,4 +145,21 @@ public class CustomersRepository {
             throw new RuntimeException(ex);
          }
     }
+    
+    public Customers update(Customers customers) {
+        try {
+            String sql = "UPDATE CUSTOMERS SET = ? ,NAME, ? ,EMAIL, ? ,ADDRESS WHERE ID = ?";
+            PreparedStatement updateStmt = connection.prepareStatement(sql);
+            updateStmt.setString(1, customers.getName());
+            updateStmt.setString(2, customers.getEmail());
+            updateStmt.setString(3, customers.getAddress());
+            updateStmt.setInt(4, customers.getId());
+            updateStmt.executeUpdate();
+            updateStmt.close();
+        
+            return customers;
+        }catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+    } 
 }

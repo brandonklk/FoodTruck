@@ -6,6 +6,7 @@
 package com.catolicasc.foodtruck.repositories;
 
 import com.catolicasc.foodtruck.ConnectionFactory;
+import com.catolicasc.foodtruck.models.Customers;
 import com.catolicasc.foodtruck.models.Products;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -135,5 +136,22 @@ public class ProductsRepository {
             }catch (SQLException ex) {
             throw new RuntimeException(ex);
          }
-    }    
+    }
+    
+    public Products update(Products products) {
+        try {
+            String sql = "UPDATE PRODUCTS SET = ? ,DESCRIPTION, ? ,PRICE WHERE ID = ?";
+            PreparedStatement updateStmt = connection.prepareStatement(sql);
+            updateStmt.setString(1, products.getDescription());
+            updateStmt.setDouble(2, products.getPrice());
+            updateStmt.setInt(3, products.getId());
+            
+            updateStmt.executeUpdate();
+            updateStmt.close();
+        
+            return products;
+        }catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
 }

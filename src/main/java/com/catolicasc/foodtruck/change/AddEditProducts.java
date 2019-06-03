@@ -61,24 +61,6 @@ public class AddEditProducts extends javax.swing.JInternalFrame {
 
         jLaber3.setText("Preço:");
 
-        tfID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfIDActionPerformed(evt);
-            }
-        });
-
-        tfPrice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfPriceActionPerformed(evt);
-            }
-        });
-
-        tfDesciption.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfDesciptionActionPerformed(evt);
-            }
-        });
-
         btSave.setText("Salvar");
         btSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,18 +120,6 @@ public class AddEditProducts extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void tfPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPriceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfPriceActionPerformed
-
-    private void tfDesciptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfDesciptionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfDesciptionActionPerformed
-
-    private void tfIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfIDActionPerformed
 
     private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
         // TODO add your handling code here:

@@ -7,6 +7,7 @@ package com.catolicasc.foodtruck.repositories;
 
 import java.sql.Connection;
 import com.catolicasc.foodtruck.ConnectionFactory;
+import com.catolicasc.foodtruck.models.Customers;
 import com.catolicasc.foodtruck.models.Ordered;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -153,4 +154,22 @@ public class OrderedRepository {
          }
     }
     
+    public Ordered update(Ordered ordered) {
+        try {
+            String sql = "UPDATE ORDERED SET = ? ,QUANTITY, ? ,PRODUCT_ID, ? ,ORDER_ID, ? ,UNIT_PRICE WHERE ID = ?";
+            PreparedStatement updateStmt = connection.prepareStatement(sql);
+            updateStmt.setDouble(1, ordered.getQuantity());
+            updateStmt.setLong(2, ordered.getProduct_id());
+            updateStmt.setLong(3, ordered.getOrder_id());
+            updateStmt.setDouble(4, ordered.getUnit_price());
+            updateStmt.setInt(5, ordered.getId());
+            
+            updateStmt.executeUpdate();
+            updateStmt.close();
+        
+            return ordered;
+        }catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+    }   
 }

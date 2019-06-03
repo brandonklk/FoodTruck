@@ -5,6 +5,7 @@
  */
 package com.catolicasc.foodtruck.lists;
 
+import com.catolicasc.foodtruck.change.AddEditOrdered;
 import com.catolicasc.foodtruck.change.AddEditProducts;
 import com.catolicasc.foodtruck.models.Products;
 import com.catolicasc.foodtruck.repositories.ProductsRepository;
@@ -173,6 +174,9 @@ public class ListProducts extends javax.swing.JInternalFrame {
 
     private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
         // TODO add your handling code here:
+        AddEditProducts addEditProducts  = new AddEditProducts();
+        this.getParent().add(addEditProducts);
+        addEditProducts.setVisible(true);
     }//GEN-LAST:event_jbDeleteActionPerformed
 
     private void jbRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRefreshActionPerformed
